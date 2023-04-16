@@ -1,0 +1,13 @@
+SPRING_DATA_MONGODB_INETADDRESS: mongodb://localhost:27017
+SPRING_DATA_MONGODB_PORT: 27017
+SPRING_DATA_MONGODB_DATABASE: Readingisgood
+
+spring:
+  application:
+    name: reading-is-good
+  data:
+    mongodb:
+      database: ${SPRING_DATA_MONGODB_DATABASE}
+      inetAddresses: ${SPRING_DATA_MONGODB_INETADDRESS}
+      authenticationDatabase: admin
+      port: ${SPRING_DATA_MONGODB_PORT}
