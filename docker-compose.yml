@@ -1,0 +1,20 @@
+version: "3.7"
+services:
+  api_service:
+    build: .
+    restart: always
+    volumes:
+    - ./:/main-app
+    ports:
+      - 9090:9090
+    depends_on:
+      - mongo_db
+  mongo_db:
+    image: "mongo:4.4.3"
+    restart: always
+    volumes:
+      - data:/data/db
+    ports:
+      - 27017:27017
+volumes:
+  data:
