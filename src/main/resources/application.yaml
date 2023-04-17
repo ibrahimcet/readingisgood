@@ -2,7 +2,9 @@ SPRING_DATA_MONGODB_INETADDRESS: mongodb://localhost:27017
 SPRING_DATA_MONGODB_PORT: 27017
 SPRING_DATA_MONGODB_DATABASE: Readingisgood
 SPRING_APPLICATION_NAME: reading-is-good
+SPRING_MATCHING_STRATEGY: ant_path_matcher
 JWT_SECRET: secretkey
+SERVER_PORT: 9090
 
 spring:
   application:
@@ -13,6 +15,12 @@ spring:
       inetAddresses: ${SPRING_DATA_MONGODB_INETADDRESS}
       authenticationDatabase: admin
       port: ${SPRING_DATA_MONGODB_PORT}
+  mvc:
+    pathmatch:
+      matching-strategy: ${SPRING_MATCHING_STRATEGY}
 
 jwt:
   secret: ${JWT_SECRET}
+
+server:
+  port: ${SERVER_PORT}

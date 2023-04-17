@@ -33,6 +33,14 @@ public class BookController implements BookApi {
     @Override
     public ResponseEntity<Book> retrieveBook(String id, HttpServletResponse response, HttpServletRequest request) throws Exception {
         Book book = bookService.retrieveBook(id);
+        logger.info("Retrieved book with id:{}", book.getId());
+        return ResponseEntity.ok().body(book);
+    }
+
+    @Override
+    public ResponseEntity<Book> patchBook(String id, String input, HttpServletResponse response, HttpServletRequest request) throws Exception {
+        Book book = bookService.patchBook(id, input);
+        logger.info("Updated book with id:{}", book.getId());
         return ResponseEntity.ok().body(book);
     }
 }

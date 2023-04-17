@@ -34,6 +34,7 @@ public class CustomerController implements CustomerApi {
     @Override
     public ResponseEntity<Customer> retrieveCustomer(String id, HttpServletResponse response, HttpServletRequest request) throws Exception {
         Customer customer = customerService.retrieveCustomer(id);
+        logger.info("retrieve customer with id:{}", customer.getId());
         return ResponseEntity.ok().body(customer);
     }
 }

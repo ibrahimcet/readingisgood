@@ -38,4 +38,6 @@ public class Order {
 
     @Quantity
     private Integer quantity;
+
+    private Status status;
 }

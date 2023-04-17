@@ -16,6 +16,7 @@ import javax.validation.Valid;
 
 @Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen")
 @Api(tags = "book",value = "the Book API")
+@RequestMapping("/api")
 public interface BookApi {
 
     @ApiOperation(value = "Create New Book", nickname = "creatingBook", response = Book.class, tags = {"book"})
@@ -51,4 +52,27 @@ public interface BookApi {
     ResponseEntity<Book> retrieveBook(@ApiParam(value = "Id of the Book", required = true) @PathVariable("id") String id,
                                               HttpServletResponse response, HttpServletRequest request
     ) throws Exception;
+
+    @ApiOperation(value = "Updates Book informations", nickname = "patchBook", response = Book.class, tags = {"book",})
+    @ApiResponses(
+            value = {
+                    @ApiResponse(code = 200, message = "Updated", response = Book.class),
+                    @ApiResponse(code = 400, message = "Bad Request", response = Error.class),
+                    @ApiResponse(code = 401, message = "Unauthorized", response = Error.class),
+                    @ApiResponse(code = 403, message = "Forbidden", response = Error.class),
+                    @ApiResponse(code = 404, message = "Not Found", response = Error.class),
+                    @ApiResponse(code = 405, message = "Method Not allowed", response = Error.class),
+                    @ApiResponse(code = 409, message = "Conflict", response = Error.class),
+                    @ApiResponse(code = 500, message = "Internal Server Error", response = Error.class)
+            })
+    @RequestMapping(
+            value = "/book/{id}",
+            produces = {"application/json;charset=utf-8"},
+            consumes = {"application/merge-patch+json;charset=utf-8"},
+            method = RequestMethod.PATCH)
+    ResponseEntity<Book> patchBook(
+            @ApiParam(value = "Id of the Book", required = true) @PathVariable("id") String id,
+            @ApiParam(value = "The Book to be updated", required = true)
+            @RequestBody String input,
+            HttpServletResponse response, HttpServletRequest request) throws Exception;
 }

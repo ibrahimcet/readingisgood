@@ -33,7 +33,7 @@ public class OrderService {
             throw new RuntimeException(String.format("an order has already been created for the same customer: %s from the same book : %s", order.getCustomer().getName(), order.getBook().getName()));
         }
         orderRepository.save(order);
-        existingBook.setStock(existingBook.getStock() - 1);
+        existingBook.setStock(existingBook.getStock() - order.getBook().getStock());
         bookRepository.save(existingBook);
         return order;
     }

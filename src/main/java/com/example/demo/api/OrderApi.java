@@ -16,6 +16,7 @@ import javax.validation.Valid;
 
 @Generated(value = "io.swagger.codegen.v3.generators.java.SpringCodegen")
 @Api(tags = "order",value = "the Order API")
+@RequestMapping("/api")
 public interface OrderApi {
 
     @ApiOperation(value = "Create New Order", nickname = "creatingOrder", response = Order.class, tags = {"order"})

@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "6cc8d775-c06a-4a52-899f-65c69326f0f6",
+		"name": "readingisgood",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "Retrieve Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4MTcwMjgzMywiaWF0IjoxNjgxNjg0ODMzfQ.qQ7b2_hkJDpb4L5N58A1mTU_-RTRcS-qCAr4PxvtF4ZEVHao1tyAbHsu6JGtG0YdtOI7kPPUzzDZTxg2My0Q0Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/order/643c1e827ecb3e1a73272c5e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"order",
+								"643c1e827ecb3e1a73272c5e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4MTcwMjgzMywiaWF0IjoxNjgxNjg0ODMzfQ.qQ7b2_hkJDpb4L5N58A1mTU_-RTRcS-qCAr4PxvtF4ZEVHao1tyAbHsu6JGtG0YdtOI7kPPUzzDZTxg2My0Q0Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer\"  : {\r\n        \"id\" : \"643c107c714a9c2931ef2ee2\",\r\n        \"name\" :\"Mert\",\r\n        \"surname\" : \"turan\",\r\n        \"email\" : \"mert@gmail.com\",\r\n        \"username\" :\"mrtrn\"\r\n    },\r\n    \"book\" : {\r\n        \"id\" : \"643c1e1ea7c40459e7c49da6\", \r\n        \"author\" : \"author2\",\r\n        \"name\" : \"book3\",\r\n        \"page\" : \"150\",\r\n        \"stock\" : \"15\",\r\n        \"price\" : \"15$\"\r\n    },\r\n    \"startDate\" : \"2023-02-03\",\r\n    \"endDate\" : \"2023-12-03\",\r\n    \"address\" : \"konak/izmir\",\r\n    \"quantity\" : 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/order",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"order"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "book",
+			"item": [
+				{
+					"name": "Add Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4MTcwMjgzMywiaWF0IjoxNjgxNjg0ODMzfQ.qQ7b2_hkJDpb4L5N58A1mTU_-RTRcS-qCAr4PxvtF4ZEVHao1tyAbHsu6JGtG0YdtOI7kPPUzzDZTxg2My0Q0Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author\" : \"author2\",\r\n    \"name\" : \"book3\",\r\n    \"page\" : 150,\r\n    \"stock\" : 15,\r\n    \"price\" : \"15$\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/book",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"book"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieve Book",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4MTcwMjgzMywiaWF0IjoxNjgxNjg0ODMzfQ.qQ7b2_hkJDpb4L5N58A1mTU_-RTRcS-qCAr4PxvtF4ZEVHao1tyAbHsu6JGtG0YdtOI7kPPUzzDZTxg2My0Q0Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/book/643c1e1ea7c40459e7c49da6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"book",
+								"643c1e1ea7c40459e7c49da6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Book Information",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4MTcwMjgzMywiaWF0IjoxNjgxNjg0ODMzfQ.qQ7b2_hkJDpb4L5N58A1mTU_-RTRcS-qCAr4PxvtF4ZEVHao1tyAbHsu6JGtG0YdtOI7kPPUzzDZTxg2My0Q0Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json;charset=utf-8",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/merge-patch+json;charset=utf-8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"author\" : \"updatedAuthor\",\r\n    \"stock\" : 10,\r\n    \"id\" :\"updatedName\",\r\n    \"page\" : 123,\r\n    \"price\" : 213,\r\n    \"name\":\"asddad\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/book/643c1e1ea7c40459e7c49da6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"book",
+								"643c1e1ea7c40459e7c49da6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customer",
+			"item": [
+				{
+					"name": "Register customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4MTcwMjgzMywiaWF0IjoxNjgxNjg0ODMzfQ.qQ7b2_hkJDpb4L5N58A1mTU_-RTRcS-qCAr4PxvtF4ZEVHao1tyAbHsu6JGtG0YdtOI7kPPUzzDZTxg2My0Q0Q",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"İbrahim123\",\r\n    \"surname\" : \"Çetin123\",\r\n    \"username\" : \"ibrctn123\",\r\n    \"password\" : \"12456\",\r\n    \"email\" : \"mert@gmail.com\",\r\n    \"address\" : \"izmir/bostanlı\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTY4MTY5NzY0MCwiaWF0IjoxNjgxNjc5NjQwfQ.g-TV_d0IITZE6OtwTEDLmSFF1Opv49AzQaM3eM8tLcf5fzToWaxyEaFW2BImex2q9a9EINKLzu2FVHiFcQ_Ydg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/api/customer/643c1092714a9c2931ef2ee3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"customer",
+								"643c1092714a9c2931ef2ee3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "token",
+			"item": [
+				{
+					"name": "GenerateToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"admin\",\r\n    \"password\" : \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/api/authenticate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"api",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

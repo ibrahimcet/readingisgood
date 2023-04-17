@@ -34,6 +34,7 @@ public class OrderController implements OrderApi {
     @Override
     public ResponseEntity<Order> retrieveOrder(String id, HttpServletResponse response, HttpServletRequest request) throws Exception {
         Order order = orderService.retrieveOrder(id);
+        logger.info("Retrieve order with id:{}", order.getId());
         return ResponseEntity.ok().body(order);
     }
 
